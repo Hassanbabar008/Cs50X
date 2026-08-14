@@ -1,0 +1,20 @@
+time ./sort1 reversed50000.txt  ---- 0m6.561s
+time ./sort1 reversed5000.txt   ---- 0m0.147s
+time ./sort1 reversed10000.txt  ----0m0.347s
+time ./sort1 random5000.txt     ----0m0.146s
+time ./sort1 random50000.txt    ----0m8.513s
+time ./sort1 sorted50000.txt    ----0m0.346s  
+
+time ./sort2 reversed50000.txt  ----0m0.348s
+time ./sort2 reversed5000.txt   ----0m0.053s
+time ./sort2 reversed10000.txt  ----0m0.089s
+time ./sort2 random5000.txt     ----0m0.057s
+time ./sort2 random50000.txt    ----0m0.324s 
+time ./sort2 sorted50000.txt    ----0m0.343s
+
+time ./sort3 reversed50000.txt  ----0m3.605s
+time ./sort3 reversed5000.txt   ----0m0.125s
+time ./sort3 reversed10000.txt  ----0m0.259s
+time ./sort3 random5000.txt     ----0m0.117s
+time ./sort3 random50000.txt    ----0m3.286s
+time ./sort3 sorted50000.txt    ----0m3.505s 

@@ -1,0 +1,14 @@
+sort1 uses: bubble sort
+
+How do you know?: when ran on random 5000.txt and reversed 5000.txt it took almost identical
+                time to sort3 but when ran on sorted 50000.txt time significantly dropped 
+                suggesting an algorithm that can identify sorted quickly and exit(omega(n))
+
+sort2 uses: merge sort
+
+How do you know?: when several .txt files were ran, this program took the smallest time to 
+                sort suggesting it is (O(nlogn))
+
+sort3 uses: insertion sort
+
+How do you know?: took the most time to compute all .txt files(especially already sorted ones)

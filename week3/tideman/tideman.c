@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include<string.h>
 
 // Max number of candidates
 #define MAX 9
@@ -127,13 +128,13 @@ void add_pairs(void)
     for(int i=0;i<candidate_count;i++){
         for(int j=i+1;j<candidate_count;j++){
             if(preferences[i][j]>preferences[j][i]){
-                pairs[i].winner=preferences[i];
-                pairs[i].loser=preferences[j];
+                pairs[pair_count].winner=i;
+                pairs[pair_count].loser=j;
                 pair_count++;
             }
             else if(preferences[j][i]>preferences[i][j]){
-                pairs[i].winner=preferences[j];
-                pairs[i].loser=preferences[i];
+                pairs[pair_count].winner=j;
+                pairs[pair_count].loser=i;
                 pair_count++;
             }
         }
@@ -145,9 +146,9 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO
-    for(int i=0;i<candidate_count-1;i++){
+    for(int i=0;i<pair_count-1;i++){
         int swapped=0;
-        for(int j=0;j<candidate_count-1-i;j++){
+        for(int j=0;j<pair_count-1-i;j++){
             int str2=preferences[pairs[j+1].winner][pairs[j+1].loser];
             int str1=preferences[pairs[j].winner][pairs[j].loser];
             if(str1<str2){

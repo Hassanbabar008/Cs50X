@@ -169,7 +169,40 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
     // TODO
-    
+    for(int i=0;i<pair_count;i++){
+        int winner=pairs[i].winner;
+        int loser=pairs[i].loser;
+
+        bool visited[MAX]={false};
+        int stack[MAX];
+        int stack_size=0;
+        
+        stack[stack_size]=loser;
+        stack_size++;
+        bool cycle=false;
+
+        while(stack_size>0){
+            stack_size--;
+            int current=stack[stack_size];
+            if(current==winner){
+                cycle=true;
+                break;
+            }
+            if(visited[current]){
+                continue;
+            }
+            visited[current]=true;
+            for(int j=0;j<candidate_count;j++){
+                if(locked[current][j] && !visited[j]){
+                    stack[stack_size]=j;
+                    stack_size++;
+                }
+            }
+        }
+        if(!cycle){
+            locked[winner][loser]=true;
+        }
+    }
     return;
 }
 

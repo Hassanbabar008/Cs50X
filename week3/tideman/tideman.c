@@ -218,8 +218,8 @@ void print_winner(void)
                 break;
             }
         }
-        for(!incoming){
-            printf("winner: %s\n",candidate[i]);
+        if(!incoming){
+            printf("winner: %s\n",candidates[i]);
             return;
         }
     }
